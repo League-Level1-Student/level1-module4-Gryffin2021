@@ -11,14 +11,16 @@ import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
  
 /** We’re going to make a slideshow of cool optical illusions. When the user clicks on an illusion, a new one will be loaded. **/
 
 public class BookOfIllusions extends MouseAdapter {
 
 	// 1. Make a JFrame variable and initialize it using "new JFrame()"
-
+	JFrame frame = new JFrame();
 	public void run() {
 		// 2. make the frame visible
 		// 3. set the size of the frame
@@ -29,6 +31,13 @@ public class BookOfIllusions extends MouseAdapter {
 		// 8. add your JLabel to the frame
 		// 9. call the pack() method on the frame
 		// 10. add a mouse listener to your frame (hint: use *this*)
+		frame.setVisible(true);
+		frame.setSize(600, 600);
+		JLabel label1 = loadImageFromComputer("download.jpeg");
+		frame.add(label1);
+		frame.pack();
+		frame.addMouseListener(this);
+		JOptionPane.showMessageDialog(null, "IF YOU CAN'T SEE THE EMOJI, YOU ARE SCIENTIFIKTICLY STUPID!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}
 
 	public void mousePressed(MouseEvent e) {
@@ -36,10 +45,16 @@ public class BookOfIllusions extends MouseAdapter {
 		// 12. remove everything from the frame that was added earlier
 		// 13. load a new image like before (this is more than one line of code)
 		// 14. pack the frame
+		System.out.println("clicked!");
+		frame.removeAll();
+		JLabel label2 = loadImageFromComputer("download-1.jpg");
+		frame.add(label2);
+		frame.pack();
+		JOptionPane.showMessageDialog(null, "ONLY 1% OF PEOPLE CAN SEE THE FROG IN THIS IMAGE!!!!!!!!!!!");
 	}
 
 	// [OPTIONAL] 15. goad your users with some annoying or witty pop-ups
-
+	
 	/*
 	 * To use this method, the image must be placed in your Eclipse project under "default package".
 	 */
