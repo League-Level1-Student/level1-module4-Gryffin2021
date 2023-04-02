@@ -18,7 +18,7 @@ public class PigLatinTranslator {
                 i++;
             }
             // If there aren't any words left, stop.
-            if (i >= s.length())
+            if (i >= s.length()) 
                 break;
             // Otherwise we're at the beginning of a word.
             int begin = i;
